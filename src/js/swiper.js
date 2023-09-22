@@ -1,3 +1,5 @@
+import Swiper from "swiper/bundle";
+import { Navigation, Pagination } from "swiper/modules";
 new Swiper(".swiper", {
   // Optional parameters
   loop: true,
@@ -6,7 +8,11 @@ new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  autoplay: true,
+  modules: [Navigation, Pagination],
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 new Swiper(".swiper-brands", {
@@ -17,6 +23,7 @@ new Swiper(".swiper-brands", {
     nextEl: ".brands-button-next",
     prevEl: ".brands-button-prev",
   },
+  modules: [Navigation, Pagination],
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
